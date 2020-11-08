@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on chizenohm</title>
+    <link>http://chizenohm.github.io/posts/</link>
+    <description>Recent content in Posts on chizenohm</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sat, 28 Jan 2017 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://chizenohm.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Fixing the Fibonacci sequence inside Pascal&#39;s triangle in a Couniverse</title>
+      <link>http://chizenohm.github.io/posts/fixing-the-fibonacci-sequence-inside-pascals-triangle-in-a-couniverse/</link>
+      <pubDate>Sat, 28 Jan 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://chizenohm.github.io/posts/fixing-the-fibonacci-sequence-inside-pascals-triangle-in-a-couniverse/</guid>
+      <description>In the year 1914, Srinivasa Ramanujan presented an infinite sequence for approximating the circle constant pi. The equation he formulated was the following:
+ \[\frac1{\pi} = \frac{2\sqrt{2}}{9801} \sum_{k=0}^\infty \frac{(4k)!(1103+26390k)}{(k!)^4 396^{4k}}\!\]   What&amp;#8217;s interesting here is the presence of constants that seem to have been forged from thin air. What seemed like magic numbers to the rest of the world was just mathematics to Ramanujan; the reason being, he was autodidact.</description>
+    </item>
+    
+  </channel>
+</rss>

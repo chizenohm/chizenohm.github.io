@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Language" content="en">
+
+    <meta name="author" content="Siddhanathan Shanmugam">
+    <meta name="description" content="In the year 1914, Srinivasa Ramanujan presented an infinite sequence for approximating the circle constant pi. The equation he formulated was the following:
+ \[\frac1{\pi} = \frac{2\sqrt{2}}{9801} \sum_{k=0}^\infty \frac{(4k)!(1103&#43;26390k)}{(k!)^4 396^{4k}}\!\]   What&#8217;s interesting here is the presence of constants that seem to have been forged from thin air. What seemed like magic numbers to the rest of the world was just mathematics to Ramanujan; the reason being, he was autodidact.">
+    <meta name="keywords" content="">
+
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Fixing the Fibonacci sequence inside Pascal&#39;s triangle in a Couniverse"/>
+<meta name="twitter:description" content="In the year 1914, Srinivasa Ramanujan presented an infinite sequence for approximating the circle constant pi. The equation he formulated was the following:
+ \[\frac1{\pi} = \frac{2\sqrt{2}}{9801} \sum_{k=0}^\infty \frac{(4k)!(1103&#43;26390k)}{(k!)^4 396^{4k}}\!\]   What&#8217;s interesting here is the presence of constants that seem to have been forged from thin air. What seemed like magic numbers to the rest of the world was just mathematics to Ramanujan; the reason being, he was autodidact."/>
+
+    <meta property="og:title" content="Fixing the Fibonacci sequence inside Pascal&#39;s triangle in a Couniverse" />
+<meta property="og:description" content="In the year 1914, Srinivasa Ramanujan presented an infinite sequence for approximating the circle constant pi. The equation he formulated was the following:
+ \[\frac1{\pi} = \frac{2\sqrt{2}}{9801} \sum_{k=0}^\infty \frac{(4k)!(1103&#43;26390k)}{(k!)^4 396^{4k}}\!\]   What&#8217;s interesting here is the presence of constants that seem to have been forged from thin air. What seemed like magic numbers to the rest of the world was just mathematics to Ramanujan; the reason being, he was autodidact." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://chizenohm.github.io/posts/fixing-the-fibonacci-sequence-inside-pascals-triangle-in-a-couniverse/" />
+<meta property="article:published_time" content="2017-01-28T00:00:00+00:00" />
+<meta property="article:modified_time" content="2017-01-28T00:00:00+00:00" />
+
+
+    <title>
+  Fixing the Fibonacci sequence inside Pascal&#39;s triangle in a Couniverse · chizenohm
+</title>
+
+    
+      <link rel="canonical" href="http://chizenohm.github.io/posts/fixing-the-fibonacci-sequence-inside-pascals-triangle-in-a-couniverse/">
+    
+
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700%7CMerriweather:300,700%7CSource+Code+Pro:400,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.1.7/css/fork-awesome.min.css" integrity="sha256-gsmEoJAws/Kd3CjuOQzLie5Q3yshhvmo7YNtBG7aaEY=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha256-l85OmPOjvil/SOvVt3HnSSjzF1TUMyT9eV0c2BzEGzU=" crossorigin="anonymous" />
+
+    
+      
+      
+      <link rel="stylesheet" href="/css/coder.min.f01c647a0d25b40da992a37c3376291185eed8a50ced8c26cc2c0bcfe38c97df.css" integrity="sha256-8Bxkeg0ltA2pkqN8M3YpEYXu2KUM7YwmzCwLz&#43;OMl98=" crossorigin="anonymous" media="screen" />
+    
+
+    
+
+    
+
+    
+
+    
+
+    <link rel="icon" type="image/png" href="/images/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="/images/favicon-16x16.png" sizes="16x16">
+
+    <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+    
+
+    <meta name="generator" content="Hugo 0.69.0" />
+  </head>
+
+  
+  
+  <body class="colorscheme-light"
+        onload=""
+  >
+    
+<div class="float-container">
+    <a id="dark-mode-toggle" class="colorscheme-toggle">
+        <i class="fa fa-adjust fa-fw" aria-hidden="true"></i>
+    </a>
+</div>
+
+
+    <main class="wrapper">
+      <nav class="navigation">
+  <section class="container">
+    <a class="navigation-title" href="/">
+      chizenohm
+    </a>
+    
+      <input type="checkbox" id="menu-toggle" />
+      <label class="menu-button float-right" for="menu-toggle">
+        <i class="fa fa-bars fa-fw" aria-hidden="true"></i>
+      </label>
+      <ul class="navigation-list">
+        
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/posts/">Blog</a>
+            </li>
+          
+        
+        
+      </ul>
+    
+  </section>
+</nav>
+
+
+      <div class="content">
+        
+  <section class="container post">
+    <article>
+      <header>
+        <div class="post-title">
+          <h1 class="title">Fixing the Fibonacci sequence inside Pascal&#39;s triangle in a Couniverse</h1>
+        </div>
+        <div class="post-meta">
+          <div class="date">
+            <span class="posted-on">
+              <i class="fa fa-calendar" aria-hidden="true"></i>
+              <time datetime='2017-01-28T00:00:00Z'>
+                January 28, 2017
+              </time>
+            </span>
+            <span class="reading-time">
+              <i class="fa fa-clock-o" aria-hidden="true"></i>
+              12-minute read
+            </span>
+          </div>
+          
+          
+          
+        </div>
+      </header>
+
+      <div>
+        
+        <div class="paragraph">
+<p>In the year 1914, Srinivasa Ramanujan presented an infinite sequence for approximating the circle constant pi. The equation he formulated was the following:</p>
+</div>
+<div class="stemblock">
+<div class="content">
+\[\frac1{\pi} = \frac{2\sqrt{2}}{9801} \sum_{k=0}^\infty \frac{(4k)!(1103+26390k)}{(k!)^4 396^{4k}}\!\]
+</div>
+</div>
+<div class="paragraph">
+<p>What&#8217;s interesting here is the presence of constants that seem to have been forged from thin air. What seemed like magic numbers to the rest of the world was just mathematics to Ramanujan; the reason being, he was autodidact. Having no formal training in pure mathematics, Ramanujan was unable to explain the pattern he saw. Ramanujan&#8217;s story is enlightening because it tells us that we can understand the world of the infinite by recognizing patterns, even if we don&#8217;t understand the mathematical proofs behind these patterns.</p>
+</div>
+<div class="paragraph">
+<p>In this post, we will explore the concept of infinity in a computational setting by relating the Fibonacci sequence to Pascal&#8217;s triangle. Not only are these concepts related, but they can be understood using simple geometric transformations that can be visualized.</p>
+</div>
+<div class="sect1">
+<h2 id="_pascals_triangle">Pascal&#8217;s triangle</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Our stepping stone into this infinite world is understanding geometric transformations using Pascal&#8217;s triangle. Constructing Pascal&#8217;s triangle is simple&#8212;&#8203;starting with a seed value of <code>{1}</code>, every element of the triangle is the sum of the two values directly above it (we can add imaginary zeroes at the edges). The following animation should help you grasp the concept of Pascal&#8217;s triangle.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="PascalTriangleAnimated2.gif" alt="AnimatedPascalTriangle">
+</div>
+</div>
+<div class="paragraph">
+<p>Image source: <a href="https://upload.wikimedia.org/wikipedia/commons/0/0d/PascalTriangleAnimated2.gif" class="bare">https://upload.wikimedia.org/wikipedia/commons/0/0d/PascalTriangleAnimated2.gif</a></p>
+</div>
+<div class="paragraph">
+<p>Rather than keeping concepts abstract, we can represent Pascal&#8217;s triangle in computer code. In this post we will be using Haskell, which is a typed purely functional programming language with call by need semantics. That may sound like a lot of technical jargon, but essentially Haskell is well suited to this problem.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_generating_pascals_triangle">Generating Pascal&#8217;s triangle</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>To begin, let&#8217;s generate Pascal&#8217;s triangle. Our goal is to generate a list of rows of Pascal&#8217;s triangle, where each row contains numbers. We could tackle this problem directly, but as a good engineer we value composability&#8212;&#8203;the ability to build small reusable components which can be combined to solve a larger problem. In our case, we would like to be able to generate one row of the triangle given the row&#8217;s predecessor&#8212;&#8203;we call this function <code>pascalStep</code>. Once we have our <code>pascalStep</code> function, the entire triangle can be evaluated by repeated applications of this function on the starting seed of <code>{1}</code>.</p>
+</div>
+<div class="paragraph">
+<p>So how exactly does <code>pascalStep</code> work? Well, we know that it takes a list of numbers as its argument, and adds adjacent elements in this list together. This can be viewed using geometric transformations. First we duplicate the row, then shift the duplicate row by one position to the right, add zeroes on the ends as appropriate, and perform column-wise addition. The following visual should help you understand this better.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="pascalStep.png" alt="pascalStep">
+</div>
+</div>
+<div class="paragraph">
+<p>The Haskell code for our <code>pascalStep</code> function is as follows:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-haskell" data-lang="haskell">pascalStep xs = zipWith (+) (cons 0 xs) (snoc xs 0)</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Equipped with the <code>pascalStep</code> function, we need a function that repeatedly applies this function to our starting seed. This function is called <code>iterate</code> in Haskell, which works as follows:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-haskell" data-lang="haskell">iterate f xs = [ x, f x, f (f x), f (f (f x)), ...]</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Thus the code generating Pascal&#8217;s triangle can be concisely written in the following manner:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-haskell" data-lang="haskell">pascalTriangle = iterate pascalStep [1]</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>We could turn the <code>pascalTriangle</code> function into a one liner if we wanted to, but we value composability, so we resist the temptation.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-haskell" data-lang="haskell">oneLiner = iterate (zipWith (+) (cons 0 xs) (snoc xs 0)) [1]</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Now, if Pascal&#8217;s triangle wasn&#8217;t very interesting, this post would end here. However, that&#8217;s clearly not the case. Pascal&#8217;s triangle was actually known to ancient mathematicians long before Blaise Pascal. In India, it was known as the staircase of Mount Meru. In Iran, it was the Khayyam triangle. And in China, it was called Yang Hui&#8217;s triangle. Today, the triangle is named after Pascal for his contributions in recognizing the patterns it contains.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_sum_of_the_diagonals">Sum of the diagonals</h2>
+<div class="sectionbody">
+<div class="imageblock">
+<div class="content">
+<img src="Fibonacci_in_Pascal_triangle.png" alt="Fibonacci Sequence in Pascal&#8217;s triangle">
+</div>
+</div>
+<div class="paragraph">
+<p>Image source: <a href="https://upload.wikimedia.org/wikipedia/commons/2/2d/Fibonacci_in_Pascal_triangle.png" class="bare">https://upload.wikimedia.org/wikipedia/commons/2/2d/Fibonacci_in_Pascal_triangle.png</a></p>
+</div>
+<div class="paragraph">
+<p>Let&#8217;s take a look at an interesting pattern. The sum of the diagonals of the Pascal&#8217;s triangle yield the Fibonacci sequence. How does a mathematical sequence, where the ratio of consecutive terms asymptotically approach the golden ratio, show up in this triangle? In other words, how does the Fibonacci sequence appear in Pascal&#8217;s triangle? Since the Fibonacci sequence is embedded in Pascal&#8217;s triangle, does that mean there is a way to generate the Fibonacci sequence using our <code>pascalStep</code> function, similar to how we constructed Pascal&#8217;s triangle using the <code>pascalStep</code> function? We will know the answer in a bit.</p>
+</div>
+<div class="paragraph">
+<p>Calculating the Fibonacci sequence is simple. The sequence starts with <code>1</code> and <code>1</code>, and every term after that is the sum of the previous two terms. If we were to naively implement a function that calculates the n&#8217;th Fibonacci number, we could write something like the following:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-haskell" data-lang="haskell">fibN 0 = 1
+fibN 1 = 1
+fibN n = fibN (n-1) + fibN (n-2)</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>However, that only gives us the n&#8217;th Fibonacci number. Computing the entire list of Fibonacci numbers becomes an expensive computation with this approach. A computer scientist would generally propose dynamic programming to reduce the time complexity, but let us look at an alternative approach which generates the Fibonacci sequence with simple geometric transformations.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_entering_the_couniverse">Entering the couniverse</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>To understand how we can generate the fibonacci sequence via geometric transformations, we need to leave this universe, and move into the couniverse! Sounds crazy, but it will make sense in a bit. If somehow we could take the list of infinite Fibonacci numbers, duplicate this list, drop the first element in one copy, and add column-wise, we end up getting every third element of the Fibonacci sequence.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="fibsHaskell.png" alt="fibsHaskell">
+</div>
+</div>
+<div class="paragraph">
+<p>So theoretically, if we prepended two 1&#8217;s to this list, we would get the Fibonacci sequence. The Haskell code for this technique is as follows:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-haskell" data-lang="haskell">fibs = 1 : 1 : zipWith (+) (tail fibs) fibs</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Now, although I said theoretically, it&#8217;s quite marvelous that this pseudocode we made up is actually valid Haskell code, and produces an efficient binary that also memoizes previous results. This is the magic of the couniverse! You can manipulate lists of infinite size in the couniverse, and you still end up with efficient implementations (sometimes more efficient than its dual counterpart in the universe).</p>
+</div>
+<div class="paragraph">
+<p>Although that&#8217;s quite elegant by itself, we want to see the relation between the Fibonacci sequence and Pascal&#8217;s triangle. There is some similarity that&#8217;s evident right away:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-haskell" data-lang="haskell">pascalStep xs = zipWith (+) (cons 0 xs) (snoc xs 0)
+fibs =  1 : 1 : zipWith (+) (tail fibs) fibs</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>In the case of <code>pascalStep</code>, we duplicate <code>xs</code>, and in the case of fibs we duplicate <code>fibs</code>. In both cases, we manipulate these copies, then add them together column-wise using <code>zipWith (+)</code>. But does the similarity stop there?</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_data_and_codata">Data and Codata</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>To understand a deeper connection, we need to talk about data and codata. In our universe, we deal with data, that is, finite values. In the couniverse, we deal with codata, that is, infinite values. Properties of the universe may not hold in the couniverse, and vice versa. To understand this, let&#8217;s consider a partial function:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-haskell" data-lang="haskell">unsafeHead [] = error "unsafeHead on empty list!"
+unsafeHead (x:_) = x</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><code>unsafeHead</code> is unsafe because it returns an error when provided an empty list. But suppose we are dealing with codata, where the list being passed is infinite, then <code>unsafeHead</code> is actually safe!</p>
+</div>
+<div class="paragraph">
+<p>That&#8217;s neat! Our unsafe functions become safe. But can things go the other way?</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-haskell" data-lang="haskell">sum [] = 0
+sum (x:xs) = x + sum xs</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Taking the sum of a list is a safe function when we deal with data (a finite list). However, computing the sum of a list when dealing with codata (an infinite list) is a non-terminating function!</p>
+</div>
+<div class="paragraph">
+<p>This explains a crucial differentiating point about data and codata. They actually live in different domains, and functions may be safe/unsafe depending on the domain you&#8217;re working with. Haskell makes no distinction between data and codata, so the lines that distinguish them are blurred here.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_equational_reasoning_in_a_couniverse">Equational Reasoning in a couniverse</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>What&#8217;s interesting is that <code>pascalStep</code> acts on data, but the <code>zipWith (+)</code> in fibs acts on codata. When acting on codata, non-intuitive things happen, the same way weird things happen when dealing with infinite sets in mathematics. We know what happens when you add an element to the start of an infinite list - we get back what we expect. But what happens when we add an element to the end of an infinite list? The list remains unchanged!</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-haskell" data-lang="haskell">snoc e infiniteList == infiniteList</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This is counter-intuitive. The length of the new list remains the same, and the result is as if we did not do anything to the list to begin with! Using this fact, we can view our fibs functions with new light!</p>
+</div>
+<div class="paragraph">
+<p>We replace <code>fibs</code> with <code>(snoc fibs 0)</code> by transforming:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-haskell" data-lang="haskell">pascalStep xs = zipWith (+) (cons 0 xs) (snoc xs 0)
+fibs =  1 : 1 : zipWith (+) (tail fibs) fibs</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>into</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-haskell" data-lang="haskell">pascalStep xs = zipWith (+) (cons 0 xs) (snoc   xs 0)
+fibs =  1 : 1 : zipWith (+) (tail fibs) (snoc fibs 0)</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Close! But <code>tail fibs</code> is not the same as <code>cons 0 xs</code>, or is it? Here is a non-trivial rewrite:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-haskell" data-lang="haskell">pascalStep xs = zipWith (+) (cons 0   xs) (snoc   xs 0)
+fibs =      1 : zipWith (+) (cons 0 fibs) (snoc fibs 0)</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This rewrite is hard to explain. You can convince yourself that this works by using geometric transformations (left as an exercise to the reader). With this rewrite, the connection is clear:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-haskell" data-lang="haskell">fibs = 1 : pascalStep fibs</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>We can continue refactoring by using function composition:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-haskell" data-lang="haskell">fibs = (cons 1 . pascalStep) fibs</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This makes the self recursion evident, allowing us to write a much stronger claim:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-haskell" data-lang="haskell">fibonacci = fix (cons 1 . pascalStep)</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>And now for the finale! The Fibonacci sequence is the least fixed point of the composition of the <code>pascalStep</code> function with a function that adds <code>1</code> to the start of the list. Mathematically speaking, the least fixed point is the smallest point for which repeated applications of the function do not change the value&#8212;&#8203;that is, <code>f x = x</code>. The least fixed point comes from a branch of mathematics known as Order Theory.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_final_thoughts">Final thoughts</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>To see the fixed point in action, we could fire up a GHCi session and see how the fibonacci sequence gets evaluated.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>GHCi, version 8.0.1: http://www.haskell.org/ghc/  :? for help
+Prelude&gt; pascalStep xs = zipWith (+) (0:xs) (xs++[0])
+Prelude&gt; f = (1:) . pascalStep
+Prelude&gt; f $ []
+[1,0]
+Prelude&gt; f . f $ []
+[1,1,1,0]
+Prelude&gt; f . f . f $ []
+[1,1,2,2,1,0]
+Prelude&gt; f . f . f . f $ []
+[1,1,2,3,4,3,1,0]
+Prelude&gt; f . f . f . f . f $ []
+[1,1,2,3,5,7,7,4,1,0]
+Prelude&gt; f . f . f . f . f . f $ []
+[1,1,2,3,5,8,12,14,11,5,1,0]
+Prelude&gt; f . f . f . f . f . f . f $ []
+[1,1,2,3,5,8,13,20,26,25,16,6,1,0]
+Prelude&gt; f . f . f . f . f . f . f . f $ []
+[1,1,2,3,5,8,13,21,33,46,51,41,22,7,1,0]
+Prelude&gt;</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>We can see that on applying the function a few times, we do not get the Fibonacci sequence! However, on repeated application, the first few elements converge to the fibonacci sequence. This is to say, if we applied the function infinite times, we would get the Fibonacci sequence.</p>
+</div>
+<div class="paragraph">
+<p>To convince yourself that this is indeed a fixed point, try passing in a different list as the argument to <code>f</code> and see if the values converge on repeated applications of this function. In fact, we can write a QuickCheck property to verify this:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-haskell" data-lang="haskell">prop_fix :: [Integer] -&gt; Int -&gt; Bool
+prop_fix xs n = take n ((!!n) . iterate f $ xs) == take n fibs
+-- +++ OK, passed 100000 tests.</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This illustrates some important points:</p>
+</div>
+<div class="sect2">
+<h3 id="_consistency_is_unnecessary_in_the_couniverse">Consistency is unnecessary in the couniverse</h3>
+<div class="paragraph">
+<p>We can see that <code>cons 1 . pascalStep</code> does not yield the Fibonacci sequence, but rather converges to it. Instead of consistency, we have eventual consistency.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_using_mathematical_jargon_helps_in_reasoning">Using mathematical jargon helps in reasoning</h3>
+<div class="paragraph">
+<p>The use of the <code>fix</code> function tells us that the function may not be consistent, but is guaranteed to be eventually consistent. This is a lot more understandable compared to the implementation with primitive self recursion. It might seem counter intuitive at first, but the mathematical jargon pays off eventually.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_equational_reasoning_applies_in_the_couniverse_but_with_a_catch">Equational reasoning applies in the couniverse, but with a catch</h3>
+<div class="paragraph">
+<p>Equational reasoning allows us to substitute freely knowing that there won&#8217;t be any unintended side-effects. This is exactly what we did when we started converting the <code>fibs</code> function to make use of <code>pascalStep</code>. But just like type isomorphisms in the universe, we have to be aware of term isomorphisms in the couniverse, such as the fact that adding an element to the end of an infinite list does not change the list.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_composability_eventually_pays_off">Composability eventually pays off</h3>
+<div class="paragraph">
+<p>Although it was tempting to convert our Pascal triangle implementation into a one liner earlier, not doing so enable code reuse. In general, we should strive to have small blocks which are easy to reason about, and compose these blocks to solve the problem at hand. The fact that the <code>pascalStep</code> function could be reasoned about using geometric transformations helped in reusing the function for the Fibonacci sequence.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_think_different">Think different</h3>
+<div class="paragraph">
+<p>We can&#8217;t solve our problems in the couniverse with the same mentality that we have in the universe.</p>
+</div>
+<div class="paragraph">
+<p>Recall that <code>sum</code> and <code>unsafeHead</code> have different properties in different universes. Whether or not we could use them depends on the universe we are working in. In the same light, our software engineering principles are designed around our universe, and sometimes these principles may not apply to the couniverse. And this also means thinking about whether GHC understands the couniverse as well as we do.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_extending_pascals_triangle">Extending Pascal&#8217;s triangle</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>So the Fibonacci sequence lives in the couniverse. This begs the question, does Pascal&#8217;s triangle also live in the couniverse? We could take an alternate approach by using a different starting seed.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="extendedTriangle.png" alt="extendedTriangle">
+</div>
+</div>
+<div class="paragraph">
+<p>Essentially a 2D infinite zipper with zeroes extending on both ends and the focus being a point in the triangle. However, there&#8217;s unanswered questions here, like what happens when you go above the first row? Do we mirror the triangle, or just say the operation is undefined?</p>
+</div>
+<div class="paragraph">
+<p>This post is quite lengthy as it is, so I will stop here. But, looking at it again, why exactly does the non-trivial rewrite work? If you&#8217;re still curious, then you can prove:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-haskell" data-lang="haskell">fibs = drop 2 fs
+  where fs = 1 : 0 : zipWith (+) (tail fs) fs</code></pre>
+</div>
+</div>
+</div>
+</div>
+
+      </div>
+
+
+      <footer>
+        
+
+
+        
+        
+        
+      </footer>
+    </article>
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script type="text/javascript" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/startup.js" id="MathJax-script"></script>
+  <script>
+    MathJax = {
+      tex: {
+        inlineMath: [
+          ['$', '$'], ['\\(', '\\)']
+        ],
+        processEscapes: true,
+        processEnvironments: true
+      },
+      options: {
+        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+      }
+    };
+  </script>
+  </section>
+
+      </div>
+
+      
+  <footer class="footer">
+    <section class="container">
+      
+      
+        ©
+        
+        2020
+         Siddhanathan Shanmugam 
+      
+      
+      
+    </section>
+  </footer>
+
+
+    </main>
+
+    
+      
+        
+        <script src="/js/dark-mode.min.0213e1773e6d1c5a644f847c67a6f8abac49a3776e2976f6008038af8c5b76a1.js"></script>
+      
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+  </body>
+
+</html>

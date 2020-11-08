@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>http://chizenohm.github.io/</loc>
+    <lastmod>2017-01-28T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://chizenohm.github.io/posts/fixing-the-fibonacci-sequence-inside-pascals-triangle-in-a-couniverse/</loc>
+    <lastmod>2017-01-28T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://chizenohm.github.io/posts/</loc>
+    <lastmod>2017-01-28T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://chizenohm.github.io/authors/</loc>
+  </url>
+  
+  <url>
+    <loc>http://chizenohm.github.io/categories/</loc>
+  </url>
+  
+  <url>
+    <loc>http://chizenohm.github.io/series/</loc>
+  </url>
+  
+  <url>
+    <loc>http://chizenohm.github.io/tags/</loc>
+  </url>
+  
+</urlset>
